@@ -22,7 +22,7 @@ public class PerlinNoise : MonoBehaviour {
 	[SerializeField]
 	private bool generateOnUpdate;
 
-	private Renderer renderer;
+	private Renderer rend;
 
 	private Texture2D GenerateTexture() {
 		Texture2D texture = new Texture2D(width, height);
@@ -33,6 +33,7 @@ public class PerlinNoise : MonoBehaviour {
 				texture.SetPixel(i, j, color);
 			}	
 		}
+		texture.filterMode = FilterMode.Point;
 		texture.Apply();
 		return texture;
 	}
@@ -51,14 +52,14 @@ public class PerlinNoise : MonoBehaviour {
 		xOffset = Random.Range(0f, 999999f);
 		yOffset = Random.Range(0f, 999999f);
 
-		renderer = GetComponent<Renderer>();
-		renderer.material.mainTexture = GenerateTexture();
+		rend = GetComponent<Renderer>();
+		rend.material.mainTexture = GenerateTexture();
 	}
 	
 	void Update () 
 	{
 		if(generateOnUpdate) {
-			renderer.material.mainTexture = GenerateTexture();
+			rend.material.mainTexture = GenerateTexture();
 		}		
 	}
 }
