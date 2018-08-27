@@ -17,7 +17,34 @@ public class ProceduralTerrain : MonoBehaviour {
 	private float scale;
 
 	[SerializeField]
-	private bool generateOnUpdate;
+	[Range(0f, 1f)]
+	private float e1;
+
+	[SerializeField]
+	[Range(0f, 1f)]
+	private float e2;
+
+	[SerializeField]
+	[Range(0f, 1f)]
+	private float e3;
+
+	[SerializeField]
+	[Range(0f, 1f)]
+	private float e4;
+
+	[SerializeField]
+	[Range(0f, 1f)]
+	private float e5;
+
+	[SerializeField]
+	[Range(0f, 1f)]
+	private float e6;
+
+	[SerializeField]
+	private float exp;
+
+	[SerializeField]
+	private float freq;
 
 	private Terrain terrain;
 
@@ -49,7 +76,18 @@ public class ProceduralTerrain : MonoBehaviour {
 		float xCoord = (float)i / width * scale;
 		float yCoord = (float)j / height * scale;
 
-		return Mathf.PerlinNoise(xCoord, yCoord);
+		float value = 
+		( e1 +Mathf.PerlinNoise(freq * 1 * xCoord, freq * 1 * yCoord)
+		+ e2 * Mathf.PerlinNoise(freq* 2 * xCoord, freq * 2 * yCoord)
+		+ e3 * Mathf.PerlinNoise(freq * 4 * xCoord, freq * 4 * yCoord)
+		+ e4 * Mathf.PerlinNoise(freq * 8 * xCoord, freq * 8 * yCoord)
+		+ e5 * Mathf.PerlinNoise(freq * 16 * xCoord, freq * 16 * yCoord)
+		+ e6 * Mathf.PerlinNoise(freq * 32 * xCoord, freq * 32 * yCoord));
+
+		value /= (e1+e2+e3+e4+e5+e6);
+		value = Mathf.Pow(value, exp);
+
+		return value;
 	}
 
 	void Start () 
@@ -58,10 +96,10 @@ public class ProceduralTerrain : MonoBehaviour {
 		terrain.terrainData = GenerateTerrain(terrain.terrainData);
 	}
 	
-	void Update () 
+	void OnValidate()
 	{
-		if(generateOnUpdate) {
+		if(Application.isPlaying) {
 			terrain.terrainData = GenerateTerrain(terrain.terrainData);
-		}
+		}		
 	}
 }

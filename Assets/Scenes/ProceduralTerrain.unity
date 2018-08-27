@@ -322,8 +322,15 @@ MonoBehaviour:
   depth: 15
   width: 512
   height: 512
-  scale: 20
-  generateOnUpdate: 0
+  scale: 5
+  e1: 0.46
+  e2: 0.317
+  e3: 0.446
+  e4: 0.216
+  e5: 0.432
+  e6: 0.265
+  exp: 2
+  freq: 1
 --- !u!114 &1490910579
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -340,7 +347,7 @@ MonoBehaviour:
   gameObjectsInstantiationLocation: {fileID: 247261866}
   width: 512
   height: 512
-  scale: 200
+  scale: 150
   xOffset: 100
   yOffset: 100
   noiseTexture: {fileID: 2800000, guid: 5abd708dea7b7074492a84fbdf3bc498, type: 3}
