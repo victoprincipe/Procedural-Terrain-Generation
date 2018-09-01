@@ -17,34 +17,16 @@ public class ProceduralTerrain : MonoBehaviour {
 	private float scale;
 
 	[SerializeField]
-	[Range(0f, 1f)]
-	private float e1;
+	private Octave oc1;
 
 	[SerializeField]
-	[Range(0f, 1f)]
-	private float e2;
+	private Octave oc2;
 
 	[SerializeField]
-	[Range(0f, 1f)]
-	private float e3;
-
-	[SerializeField]
-	[Range(0f, 1f)]
-	private float e4;
-
-	[SerializeField]
-	[Range(0f, 1f)]
-	private float e5;
-
-	[SerializeField]
-	[Range(0f, 1f)]
-	private float e6;
+	private Octave oc3;	
 
 	[SerializeField]
 	private float exp;
-
-	[SerializeField]
-	private float freq;
 
 	private Terrain terrain;
 
@@ -77,17 +59,13 @@ public class ProceduralTerrain : MonoBehaviour {
 		float yCoord = (float)j / height * scale;
 
 		float value = 
-		( e1 +Mathf.PerlinNoise(freq * 1 * xCoord, freq * 1 * yCoord)
-		+ e2 * Mathf.PerlinNoise(freq* 2 * xCoord, freq * 2 * yCoord)
-		+ e3 * Mathf.PerlinNoise(freq * 4 * xCoord, freq * 4 * yCoord)
-		+ e4 * Mathf.PerlinNoise(freq * 8 * xCoord, freq * 8 * yCoord)
-		+ e5 * Mathf.PerlinNoise(freq * 16 * xCoord, freq * 16 * yCoord)
-		+ e6 * Mathf.PerlinNoise(freq * 32 * xCoord, freq * 32 * yCoord));
+		( oc1.amplitude * Mathf.PerlinNoise(oc1.frequency *  xCoord, oc1.frequency * yCoord)
+		+ oc2.amplitude * Mathf.PerlinNoise(oc2.frequency * xCoord, oc2.frequency * yCoord)
+		+ oc3.amplitude * Mathf.PerlinNoise(oc3.frequency * xCoord, oc3.frequency * yCoord));
 
-		value /= (e1+e2+e3+e4+e5+e6);
-		value = Mathf.Pow(value, exp);
-
-		return value;
+		value /= (oc1.amplitude + oc2.amplitude + oc3.amplitude);		
+		
+		return Mathf.Pow(value, exp);
 	}
 
 	void Start () 
@@ -99,7 +77,9 @@ public class ProceduralTerrain : MonoBehaviour {
 	void OnValidate()
 	{
 		if(Application.isPlaying) {
-			terrain.terrainData = GenerateTerrain(terrain.terrainData);
+			if(terrain) {
+				terrain.terrainData = GenerateTerrain(terrain.terrainData);
+			}			
 		}		
 	}
 }
