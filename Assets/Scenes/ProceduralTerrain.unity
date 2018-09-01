@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_SkyboxMaterial: {fileID: 2100000, guid: d098247ce6272eb4d897299d5432ff3a, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -37,7 +37,7 @@ RenderSettings:
   m_ReflectionBounces: 1
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
-  m_Sun: {fileID: 0}
+  m_Sun: {fileID: 392890811}
   m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
@@ -143,7 +143,7 @@ Light:
   m_Enabled: 1
   serializedVersion: 8
   m_Type: 1
-  m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
+  m_Color: {r: 1, g: 0.9254902, b: 0.7294118, a: 1}
   m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
@@ -152,9 +152,9 @@ Light:
     m_Type: 2
     m_Resolution: -1
     m_CustomResolution: -1
-    m_Strength: 1
+    m_Strength: 0.429
     m_Bias: 0.05
-    m_NormalBias: 0.4
+    m_NormalBias: 0
     m_NearPlane: 0.2
   m_Cookie: {fileID: 0}
   m_DrawHalo: 0
@@ -165,7 +165,7 @@ Light:
     m_Bits: 4294967295
   m_Lightmapping: 4
   m_AreaSize: {x: 1, y: 1}
-  m_BounceIntensity: 1
+  m_BounceIntensity: 2
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
   m_ShadowRadius: 0
@@ -176,13 +176,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 392890810}
-  m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
+  m_LocalRotation: {x: 0.5862739, y: 0.014843487, z: -0.010744893, w: 0.80990565}
   m_LocalPosition: {x: 0, y: 3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 71.8, y: -717.9, z: 0}
 --- !u!4 &458465952 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4541243348575714, guid: fb0fe87b62f9da640b84b35045b5548f,
@@ -230,7 +230,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4565312898852672, guid: d42198af94bb25c488ed0a4d69ab976e, type: 2}
       propertyPath: m_RootOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1788182533920778, guid: d42198af94bb25c488ed0a4d69ab976e, type: 2}
       propertyPath: m_Name
@@ -239,7 +239,17 @@ Prefab:
     - target: {fileID: 114509979739811686, guid: d42198af94bb25c488ed0a4d69ab976e,
         type: 2}
       propertyPath: speed
-      value: 5
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 114509979739811686, guid: d42198af94bb25c488ed0a4d69ab976e,
+        type: 2}
+      propertyPath: runningSpeed
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 20415895568608462, guid: d42198af94bb25c488ed0a4d69ab976e,
+        type: 2}
+      propertyPath: m_AllowDynamicResolution
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d42198af94bb25c488ed0a4d69ab976e, type: 2}
@@ -308,6 +318,30 @@ Prefab:
       propertyPath: gameObjectsInstantiationLocation
       value: 
       objectReference: {fileID: 247261866}
+    - target: {fileID: 114090860338562136, guid: 62bb19f3644c7824bb871f246ec2f805,
+        type: 2}
+      propertyPath: maxValuethreshold
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114090860338562136, guid: 62bb19f3644c7824bb871f246ec2f805,
+        type: 2}
+      propertyPath: scale
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 1922176249205052, guid: 62bb19f3644c7824bb871f246ec2f805, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 154134971075477354, guid: 62bb19f3644c7824bb871f246ec2f805,
+        type: 2}
+      propertyPath: m_EnableTreeColliders
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 218053808617744444, guid: 62bb19f3644c7824bb871f246ec2f805,
+        type: 2}
+      propertyPath: m_DrawTreesAndFoliage
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 62bb19f3644c7824bb871f246ec2f805, type: 2}
   m_IsPrefabParent: 0
@@ -328,6 +362,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mouseSensitivity: 2
+  maxVertical: 80
 --- !u!1001 &2091392144
 Prefab:
   m_ObjectHideFlags: 0
