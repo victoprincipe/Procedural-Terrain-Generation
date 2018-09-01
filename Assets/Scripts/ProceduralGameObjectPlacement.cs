@@ -9,6 +9,9 @@ public class ProceduralGameObjectPlacement : MonoBehaviour {
 	private GameObject obj;
 
 	[SerializeField]
+	private Transform startPos;
+
+	[SerializeField]
 	private int maxValuethreshold;
 
 	[SerializeField]

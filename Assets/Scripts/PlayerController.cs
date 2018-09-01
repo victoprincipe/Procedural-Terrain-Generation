@@ -17,6 +17,6 @@ public class PlayerController : MonoBehaviour {
 		else {
 			movement.IsRunning = false;
 		}
-		movement.Move(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+		movement.MoveFoward(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
 	}
 }

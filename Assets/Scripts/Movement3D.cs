@@ -135,4 +135,28 @@ public class Movement3D : MonoBehaviour {
 		}		
 	}
 
+	public void MoveFoward(Vector2 input) {
+		if(Mathf.Abs(input.magnitude) > 0) {
+			Vector3 forward = transform.forward * input.y;
+			Vector3 side = transform.TransformDirection(Vector3.right * input.x);
+			Vector3 movement = (forward + side).normalized * speed * Time.deltaTime;
+			if(isRunning) {
+				movement = (forward + side).normalized * Time.deltaTime * runningSpeed;
+			}
+			rb.MovePosition(rb.position + movement);
+		}
+	}
+
+	public void MoveFoward(float x, float y) {
+		if(Mathf.Abs(x) > 0 || Mathf.Abs(y) > 0) {
+			Vector3 forward = transform.forward * y;
+			Vector3 side = transform.TransformDirection(Vector3.right * x);
+			Vector3 movement = (forward + side).normalized * speed * Time.deltaTime;
+			if(isRunning) {
+				movement = (forward + side).normalized * Time.deltaTime * runningSpeed;
+			}
+			rb.MovePosition(rb.position + movement);
+		}
+	}
+
 }

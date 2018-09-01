@@ -21,13 +21,13 @@ public class ProceduralPlacementResolver : MonoBehaviour {
 		out hit, maxDistanceRay, layer))
 		{
 			point = hit.point;
-			float angle = Vector3.AngleBetween(Vector3.up, hit.normal) * Mathf.Rad2Deg;
 			transform.position = hit.point;	
+			float angle = Vector3.AngleBetween(Vector3.up, hit.normal) * Mathf.Rad2Deg;			
 			if(angle > maxAngle) {
-				transform.rotation = Quaternion.AngleAxis(maxAngle, Vector3.up);
+				transform.rotation = Quaternion.AngleAxis(maxAngle, Vector3.up);	
 			}
-			else {		
-				transform.rotation = Quaternion.FromToRotation(Vector3.up, hit.normal);	
+			else {					
+				transform.rotation = Quaternion.FromToRotation(Vector3.up, hit.normal);		
 			}				
 		}
 		Destroy(this);
