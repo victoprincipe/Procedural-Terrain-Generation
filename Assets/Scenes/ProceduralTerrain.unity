@@ -23,7 +23,7 @@ RenderSettings:
   m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
-  m_AmbientIntensity: 1
+  m_AmbientIntensity: 0.8
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
   m_SkyboxMaterial: {fileID: 2100000, guid: d098247ce6272eb4d897299d5432ff3a, type: 2}
@@ -35,10 +35,10 @@ RenderSettings:
   m_DefaultReflectionMode: 0
   m_DefaultReflectionResolution: 128
   m_ReflectionBounces: 1
-  m_ReflectionIntensity: 1
+  m_ReflectionIntensity: 0.311
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 392890811}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.042858828, g: 0.23447444, b: 0.255005, a: 0.311}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -89,7 +89,8 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaIndirect: 2
     m_PVRFilteringAtrousPositionSigmaAO: 1
     m_ShowResolutionOverlay: 1
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000002, guid: f37a98c34bdd1814aa9573def4e5eecf,
+    type: 2}
   m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
@@ -143,7 +144,7 @@ Light:
   m_Enabled: 1
   serializedVersion: 8
   m_Type: 1
-  m_Color: {r: 1, g: 0.9254902, b: 0.7294118, a: 1}
+  m_Color: {r: 0.972549, g: 0.9647059, b: 0.3882353, a: 1}
   m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
@@ -191,6 +192,11 @@ Transform:
 --- !u!4 &463585360 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4391578944391924, guid: fb0fe87b62f9da640b84b35045b5548f,
+    type: 2}
+  m_PrefabInternal: {fileID: 2091392144}
+--- !u!4 &712034043 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4469399730558284, guid: fb0fe87b62f9da640b84b35045b5548f,
     type: 2}
   m_PrefabInternal: {fileID: 2091392144}
 --- !u!1001 &1015513563
@@ -342,9 +348,104 @@ Prefab:
       propertyPath: m_DrawTreesAndFoliage
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114331281348760618, guid: 62bb19f3644c7824bb871f246ec2f805,
+        type: 2}
+      propertyPath: oc1.amplitude
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114331281348760618, guid: 62bb19f3644c7824bb871f246ec2f805,
+        type: 2}
+      propertyPath: oc2.amplitude
+      value: 0.613
+      objectReference: {fileID: 0}
+    - target: {fileID: 114331281348760618, guid: 62bb19f3644c7824bb871f246ec2f805,
+        type: 2}
+      propertyPath: oc3.amplitude
+      value: 0.073
+      objectReference: {fileID: 0}
+    - target: {fileID: 114097371566219040, guid: 62bb19f3644c7824bb871f246ec2f805,
+        type: 2}
+      propertyPath: name
+      value: Tree
+      objectReference: {fileID: 0}
+    - target: {fileID: 114157242739696588, guid: 62bb19f3644c7824bb871f246ec2f805,
+        type: 2}
+      propertyPath: name
+      value: Rock
+      objectReference: {fileID: 0}
+    - target: {fileID: 114090860338562136, guid: 62bb19f3644c7824bb871f246ec2f805,
+        type: 2}
+      propertyPath: name
+      value: Grass
+      objectReference: {fileID: 0}
+    - target: {fileID: 114220048922883742, guid: 62bb19f3644c7824bb871f246ec2f805,
+        type: 2}
+      propertyPath: name
+      value: Mushroom
+      objectReference: {fileID: 0}
+    - target: {fileID: 218053808617744444, guid: 62bb19f3644c7824bb871f246ec2f805,
+        type: 2}
+      propertyPath: m_MaterialType
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 218053808617744444, guid: 62bb19f3644c7824bb871f246ec2f805,
+        type: 2}
+      propertyPath: m_ReflectionProbeUsage
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 218053808617744444, guid: 62bb19f3644c7824bb871f246ec2f805,
+        type: 2}
+      propertyPath: m_MaterialTemplate
+      value: 
+      objectReference: {fileID: 2100000, guid: 71bc99396fbcff34cb76c5ff744fcbbe, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 62bb19f3644c7824bb871f246ec2f805, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1257034672 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1922176249205052, guid: 62bb19f3644c7824bb871f246ec2f805,
+    type: 2}
+  m_PrefabInternal: {fileID: 1247766555}
+--- !u!114 &1257034673
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1257034672}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97297f3504186254cb3a317a53c606ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  name: Crystal
+  obj: {fileID: 1732471415899674, guid: ee9029c071cdf3146a1e2f3520febb01, type: 2}
+  startPos: {fileID: 0}
+  maxValuethreshold: 10
+  gameObjectsInstantiationLocation: {fileID: 712034043}
+  width: 128
+  height: 128
+  scale: 500
+  xOffset: 66
+  yOffset: 87
+  noiseTexture: {fileID: 0}
+--- !u!114 &1257034674
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1257034672}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e039284a6398dc944943cc07808741bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: 2100000, guid: 71bc99396fbcff34cb76c5ff744fcbbe, type: 2}
+  shaderNoiseTextureName: _NoiseTex
+  width: 512
+  height: 512
+  scale: 2
+  xOffset: 50
+  yOffset: 90
 --- !u!1 &1260822955 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1238072799528676, guid: d42198af94bb25c488ed0a4d69ab976e,

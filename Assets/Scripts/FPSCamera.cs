@@ -18,6 +18,7 @@ public class FPSCamera : MonoBehaviour {
         transform.Rotate (0, horizontal, 0);
         float lastCameraAngle = Camera.main.transform.eulerAngles.x;
         float newCameraAngle = lastCameraAngle - vertical;
+        
         Camera.main.transform.eulerAngles = new Vector3(newCameraAngle, transform.eulerAngles.y, 0);
     }
 

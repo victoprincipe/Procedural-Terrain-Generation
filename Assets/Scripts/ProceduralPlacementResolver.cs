@@ -13,6 +13,9 @@ public class ProceduralPlacementResolver : MonoBehaviour {
 	[SerializeField]
 	private float maxAngle;
 
+	[SerializeField]
+	private float distanceFromCollisionPosition = 0f;
+
 	private Vector3 point;
 
 	private void Start() {
@@ -21,7 +24,7 @@ public class ProceduralPlacementResolver : MonoBehaviour {
 		out hit, maxDistanceRay, layer))
 		{
 			point = hit.point;
-			transform.position = hit.point;	
+			transform.position = hit.point + Vector3.up * distanceFromCollisionPosition;	
 			float angle = Vector3.AngleBetween(Vector3.up, hit.normal) * Mathf.Rad2Deg;			
 			if(angle > maxAngle) {
 				transform.rotation = Quaternion.AngleAxis(maxAngle, Vector3.up);	

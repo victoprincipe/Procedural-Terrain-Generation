@@ -6,6 +6,9 @@ using UnityEngine;
 public class ProceduralGameObjectPlacement : MonoBehaviour {
 
 	[SerializeField]
+	private string name;
+
+	[SerializeField]
 	private GameObject obj;
 
 	[SerializeField]
@@ -79,7 +82,12 @@ public class ProceduralGameObjectPlacement : MonoBehaviour {
 		noiseTexture.Apply();
 
 		byte[] data = noiseTexture.EncodeToPNG();
-		File.WriteAllBytes(Application.dataPath + "/../Assets/Textures/text.png", data);
+		if(name != null) {
+			File.WriteAllBytes(Application.dataPath + "/../Assets/Textures/" + name + ".png", data);
+		}
+		else {
+			File.WriteAllBytes(Application.dataPath + "/../Assets/Textures/" + obj.name + ".png", data);
+		}
 	}
 
 	private Color CaculateColor(int i, int j) {
