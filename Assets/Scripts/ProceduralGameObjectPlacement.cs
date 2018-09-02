@@ -15,7 +15,7 @@ public class ProceduralGameObjectPlacement : MonoBehaviour {
 	private Transform startPos;
 
 	[SerializeField]
-	private int maxValuethreshold;
+	private int maxValueThreshold;
 
 	[SerializeField]
 	Transform gameObjectsInstantiationLocation;
@@ -58,8 +58,8 @@ public class ProceduralGameObjectPlacement : MonoBehaviour {
 		for(int i = 0; i < width; i++) {
 			for(int j = 0; j < height; j++) {
 				float max = 0;								
-				for(int k = i - maxValuethreshold; k <= i + maxValuethreshold; k++) {
-					for(int l = j - maxValuethreshold; l <= j + maxValuethreshold; l++) {						
+				for(int k = i - maxValueThreshold; k <= i + maxValueThreshold; k++) {
+					for(int l = j - maxValueThreshold; l <= j + maxValueThreshold; l++) {						
 						float e = noiseTexture.GetPixel(k, l).maxColorComponent;
 						if(e > max) {
 							max = e;
@@ -67,14 +67,14 @@ public class ProceduralGameObjectPlacement : MonoBehaviour {
 					}					
 				}
 				if(noiseTexture.GetPixel(i, j).maxColorComponent == max) {
-					noiseTexture.SetPixel(i, j, Color.black);
+					noiseTexture.SetPixel(i, j, Color.white);
 				}				
 			}	
 		}
 		for(int i = 0; i < width; i++) {
 			for(int j = 0; j < height; j++) {
-				if(noiseTexture.GetPixel(i, j) != Color.black){
-					noiseTexture.SetPixel(i, j, Color.white);
+				if(noiseTexture.GetPixel(i, j) != Color.white){
+					noiseTexture.SetPixel(i, j, Color.black);
 				}				
 			}	
 		}
@@ -103,7 +103,7 @@ public class ProceduralGameObjectPlacement : MonoBehaviour {
 		for(int i = 0; i < width; i++) {
 			for(int j = 0; j < height; j++) 
 			{
-				if(noiseTexture.GetPixel(i, j) == Color.black) {					
+				if(noiseTexture.GetPixel(i, j) == Color.white) {					
 					GameObject go = (GameObject)Instantiate(obj, Vector3.zero, Quaternion.identity);
 					if(gameObjectsInstantiationLocation) {
 						go.transform.parent = gameObjectsInstantiationLocation;

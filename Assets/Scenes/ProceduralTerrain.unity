@@ -398,6 +398,76 @@ Prefab:
       propertyPath: m_MaterialTemplate
       value: 
       objectReference: {fileID: 2100000, guid: 71bc99396fbcff34cb76c5ff744fcbbe, type: 2}
+    - target: {fileID: 114331281348760618, guid: 62bb19f3644c7824bb871f246ec2f805,
+        type: 2}
+      propertyPath: width
+      value: 256
+      objectReference: {fileID: 0}
+    - target: {fileID: 114331281348760618, guid: 62bb19f3644c7824bb871f246ec2f805,
+        type: 2}
+      propertyPath: height
+      value: 256
+      objectReference: {fileID: 0}
+    - target: {fileID: 114097371566219040, guid: 62bb19f3644c7824bb871f246ec2f805,
+        type: 2}
+      propertyPath: width
+      value: 256
+      objectReference: {fileID: 0}
+    - target: {fileID: 114097371566219040, guid: 62bb19f3644c7824bb871f246ec2f805,
+        type: 2}
+      propertyPath: height
+      value: 256
+      objectReference: {fileID: 0}
+    - target: {fileID: 114157242739696588, guid: 62bb19f3644c7824bb871f246ec2f805,
+        type: 2}
+      propertyPath: width
+      value: 256
+      objectReference: {fileID: 0}
+    - target: {fileID: 114157242739696588, guid: 62bb19f3644c7824bb871f246ec2f805,
+        type: 2}
+      propertyPath: height
+      value: 256
+      objectReference: {fileID: 0}
+    - target: {fileID: 114090860338562136, guid: 62bb19f3644c7824bb871f246ec2f805,
+        type: 2}
+      propertyPath: width
+      value: 256
+      objectReference: {fileID: 0}
+    - target: {fileID: 114090860338562136, guid: 62bb19f3644c7824bb871f246ec2f805,
+        type: 2}
+      propertyPath: height
+      value: 256
+      objectReference: {fileID: 0}
+    - target: {fileID: 114220048922883742, guid: 62bb19f3644c7824bb871f246ec2f805,
+        type: 2}
+      propertyPath: width
+      value: 256
+      objectReference: {fileID: 0}
+    - target: {fileID: 114220048922883742, guid: 62bb19f3644c7824bb871f246ec2f805,
+        type: 2}
+      propertyPath: height
+      value: 256
+      objectReference: {fileID: 0}
+    - target: {fileID: 114097371566219040, guid: 62bb19f3644c7824bb871f246ec2f805,
+        type: 2}
+      propertyPath: maxValueThreshold
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114157242739696588, guid: 62bb19f3644c7824bb871f246ec2f805,
+        type: 2}
+      propertyPath: maxValueThreshold
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 114090860338562136, guid: 62bb19f3644c7824bb871f246ec2f805,
+        type: 2}
+      propertyPath: maxValueThreshold
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 114220048922883742, guid: 62bb19f3644c7824bb871f246ec2f805,
+        type: 2}
+      propertyPath: maxValueThreshold
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 62bb19f3644c7824bb871f246ec2f805, type: 2}
   m_IsPrefabParent: 0
@@ -420,10 +490,10 @@ MonoBehaviour:
   name: Crystal
   obj: {fileID: 1732471415899674, guid: ee9029c071cdf3146a1e2f3520febb01, type: 2}
   startPos: {fileID: 0}
-  maxValuethreshold: 10
+  maxValueThreshold: 30
   gameObjectsInstantiationLocation: {fileID: 712034043}
-  width: 128
-  height: 128
+  width: 256
+  height: 256
   scale: 500
   xOffset: 66
   yOffset: 87
@@ -441,11 +511,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   material: {fileID: 2100000, guid: 71bc99396fbcff34cb76c5ff744fcbbe, type: 2}
   shaderNoiseTextureName: _NoiseTex
-  width: 512
-  height: 512
+  width: 256
+  height: 256
   scale: 2
   xOffset: 50
   yOffset: 90
+  randomOffset: 1
 --- !u!1 &1260822955 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1238072799528676, guid: d42198af94bb25c488ed0a4d69ab976e,
