@@ -47,6 +47,7 @@ public class Noise {
 				matrix[x, y] = Mathf.Pow(result, exp); 
 			}
 		}		
+		SaveTexture(matrix, width, height);
 		return matrix;
 	}
 
@@ -76,11 +77,16 @@ public class Noise {
 		for(int j = 0; j < height; j++) {
 			for(int i = 0; i < width; i++) {
 				float sample = data[i, j];
-				texture.SetPixel(i, j, new Color(sample, sample, sample));
+				if(sample > 0.22f && sample < 0.35f) {
+					texture.SetPixel(i, j, Color.green);
+				}
+				else {
+					texture.SetPixel(i, j, new Color(sample, sample, sample));
+				}				
 			}
 		}
 		byte[] bytes = texture.EncodeToJPG();
-		File.WriteAllBytes(Application.dataPath + "/../Assets/Textures/tree.png", bytes);
+		File.WriteAllBytes(Application.dataPath + "/../Assets/Textures/terrain.png", bytes);
 		texture.Apply();
 	}
 

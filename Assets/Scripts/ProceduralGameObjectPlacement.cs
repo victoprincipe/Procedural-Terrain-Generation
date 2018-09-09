@@ -31,6 +31,7 @@ public class ProceduralGameObjectPlacement {
 				bool canPlace = false;
 				foreach(Vector2 v in data.placementLocations) {
 					if(terrainData[i, j] > v.x && terrainData[i, j] < v.y) {
+						Debug.Log(terrainData[i, j]);
 						canPlace = true;
 					}
 				}
@@ -46,9 +47,8 @@ public class ProceduralGameObjectPlacement {
 					}
 					if(objNoise[i, j] == max) {
 						objNoise[i, j] = 1;
-						GameObject go = (GameObject)GameObject.Instantiate(data.obj, new Vector3(i, 0, j), Quaternion.identity);
+						GameObject go = (GameObject)GameObject.Instantiate(data.obj, new Vector3(j, 0, i), Quaternion.identity);
 						go.transform.parent = data.gameObjectsInstantiationParent;
-						Debug.Log(terrainData[i, j]);
 					}
 
 				}						
