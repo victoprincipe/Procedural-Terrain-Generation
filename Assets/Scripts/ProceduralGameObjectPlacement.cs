@@ -31,7 +31,6 @@ public class ProceduralGameObjectPlacement {
 				bool canPlace = false;
 				foreach(Vector2 v in data.placementLocations) {
 					if(terrainData[i, j] > v.x && terrainData[i, j] < v.y) {
-						Debug.Log(terrainData[i, j]);
 						canPlace = true;
 					}
 				}

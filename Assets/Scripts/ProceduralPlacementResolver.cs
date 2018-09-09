@@ -18,10 +18,10 @@ public class ProceduralPlacementResolver : MonoBehaviour {
 
 	private void Start() {
 		RaycastHit hit;
-		if(Physics.Raycast(transform.position + Vector3.down * 50f, Vector3.up, 
+		if(Physics.Raycast(transform.position + Vector3.up * 200f, -Vector3.up, 
 		out hit, maxDistanceRay, layer))
 		{
-			transform.parent.position = hit.point + Vector3.up * distanceFromCollisionPosition;	
+			transform.position = hit.point + Vector3.up * distanceFromCollisionPosition;	
 			float angle = Vector3.AngleBetween(Vector3.up, hit.normal) * Mathf.Rad2Deg;			
 			if(angle > maxAngle) {
 				transform.rotation = Quaternion.AngleAxis(maxAngle, Vector3.up);	
@@ -30,7 +30,7 @@ public class ProceduralPlacementResolver : MonoBehaviour {
 				transform.rotation = Quaternion.FromToRotation(Vector3.up, hit.normal);		
 			}				
 		}
-		Destroy(gameObject);
+		Destroy(this);
 	}
 
 }

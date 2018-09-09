@@ -47,7 +47,6 @@ public class Noise {
 				matrix[x, y] = Mathf.Pow(result, exp); 
 			}
 		}		
-		SaveTexture(matrix, width, height);
 		return matrix;
 	}
 

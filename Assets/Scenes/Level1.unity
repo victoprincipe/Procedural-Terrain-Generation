@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_SkyboxMaterial: {fileID: 2100000, guid: d098247ce6272eb4d897299d5432ff3a, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -258,12 +258,45 @@ MonoBehaviour:
     width: 1024
     height: 1024
     scale: 2
-    peakScanArea: 6
+    peakScanArea: 10
     placementLocations:
-    - {x: 0.21, y: 0.25}
+    - {x: 0.1, y: 0.25}
     xOffset: 0
     yOffset: 0
-    gameObjectsInstantiationParent: {fileID: 0}
+    gameObjectsInstantiationParent: {fileID: 220387702}
+  - name: Grass
+    obj: {fileID: 1393978557920002, guid: ff7e8725d3309a94188de92fc5a90013, type: 2}
+    width: 1024
+    height: 1024
+    scale: 2
+    peakScanArea: 4
+    placementLocations:
+    - {x: 0.1, y: 0.25}
+    xOffset: 2.16
+    yOffset: 2.58
+    gameObjectsInstantiationParent: {fileID: 1890488821}
+  - name: Rocks
+    obj: {fileID: 1827641601473414, guid: 44911c92e6d9736498ec1184459747f4, type: 2}
+    width: 1024
+    height: 1024
+    scale: 2
+    peakScanArea: 12
+    placementLocations:
+    - {x: 0.1, y: 0.35}
+    xOffset: 3.94
+    yOffset: 6.08
+    gameObjectsInstantiationParent: {fileID: 1832574538}
+  - name: Mushroom
+    obj: {fileID: 1372852239657830, guid: 4dd08f970befd5a499e423b9a2be6b08, type: 2}
+    width: 1024
+    height: 1024
+    scale: 2
+    peakScanArea: 8
+    placementLocations:
+    - {x: 0.1, y: 0.25}
+    xOffset: 5.63
+    yOffset: 2.58
+    gameObjectsInstantiationParent: {fileID: 1408322190}
   placeObjects: 1
   liveUpdate: 0
 --- !u!1001 &872835118
@@ -406,6 +439,34 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1.0000002, z: 6.123235e-17}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &1408322189
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1408322190}
+  m_Layer: 0
+  m_Name: Mushrooms
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1408322190
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1408322189}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1484722035}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1484722034
 GameObject:
   m_ObjectHideFlags: 0
@@ -432,6 +493,9 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 220387702}
+  - {fileID: 1890488821}
+  - {fileID: 1832574538}
+  - {fileID: 1408322190}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -500,3 +564,59 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!1 &1832574537
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1832574538}
+  m_Layer: 0
+  m_Name: Rocks
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1832574538
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1832574537}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1484722035}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1890488820
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1890488821}
+  m_Layer: 0
+  m_Name: Grass
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1890488821
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1890488820}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1484722035}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
