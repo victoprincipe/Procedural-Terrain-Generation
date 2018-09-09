@@ -18,6 +18,10 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
+    - _BeachTex:
+        m_Texture: {fileID: 2800000, guid: 373f19517dd249d4e88229ce6c558ec2, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _BumpMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -47,7 +51,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _GrassTex:
-        m_Texture: {fileID: 2800000, guid: 373f19517dd249d4e88229ce6c558ec2, type: 3}
+        m_Texture: {fileID: 2800000, guid: 0c2dd2ce4d74b5b4a98d8822972f9a70, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
@@ -86,6 +90,22 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _RockTex:
+        m_Texture: {fileID: 2800000, guid: 1b3dcf79083e1ee45bb10030732212fa, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _RockText:
+        m_Texture: {fileID: 2800000, guid: 373f19517dd249d4e88229ce6c558ec2, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SnowTex:
+        m_Texture: {fileID: 2800000, guid: 4ff10ec2703dedc478390093a91889a9, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SnowText:
+        m_Texture: {fileID: 2800000, guid: c699afbe87baaf14ba7d36f80b8c31ed, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _SpecGlossMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -106,15 +126,25 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _WaterTex:
+        m_Texture: {fileID: 28169713460751588, guid: 26a345a8f2293414bb9fbab6442689e8,
+          type: 2}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     m_Floats:
+    - _BeachHeight: 0.09
     - _BumpScale: 1
     - _Cutoff: 0.5
+    - _Depth: 180
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
     - _GlossMapScale: 1
-    - _Glossiness: 0.5
+    - _Glossiness: 0.359
     - _GlossyReflections: 1
-    - _Metallic: 0
+    - _GrassHeight: 0.269
+    - _GrassTex: 0
+    - _Height: 0.23
+    - _Metallic: 0.274
     - _Metallic0: 0
     - _Metallic1: 0
     - _Metallic2: 0
@@ -122,16 +152,24 @@ Material:
     - _Mode: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.02
+    - _RockHeight: 0.419
     - _Smoothness0: 1
     - _Smoothness1: 1
     - _Smoothness2: 1
     - _Smoothness3: 1
     - _SmoothnessTextureChannel: 0
+    - _SnowHeight: 1
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _UVSec: 0
+    - _WaterHeight: 0
     - _ZWrite: 1
     m_Colors:
+    - _BeachColor: {r: 0.8584906, g: 0.8302692, b: 0.5547793, a: 0}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _GrassColor: {r: 0.23642756, g: 0.7264151, b: 0.33031318, a: 0}
+    - _RockColor: {r: 0.764151, g: 0.73891956, b: 0.73891956, a: 0}
+    - _SnowColor: {r: 0.7398095, g: 0.8962264, b: 0.87394494, a: 0}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
+    - _WaterColor: {r: 0.32226774, g: 0.80299675, b: 0.9622642, a: 0}

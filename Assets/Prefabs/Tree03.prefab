@@ -99,8 +99,9 @@ MonoBehaviour:
   layer:
     serializedVersion: 2
     m_Bits: 512
-  maxDistanceRay: 80
+  maxDistanceRay: 9999
   maxAngle: 25
+  distanceFromCollisionPosition: 0
 --- !u!136 &136567322392767850
 CapsuleCollider:
   m_ObjectHideFlags: 1

@@ -98,6 +98,6 @@ MonoBehaviour:
   layer:
     serializedVersion: 2
     m_Bits: 512
-  maxDistanceRay: 80
+  maxDistanceRay: 9999
   maxAngle: 359
   distanceFromCollisionPosition: 2

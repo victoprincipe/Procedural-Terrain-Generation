@@ -4,10 +4,9 @@ using UnityEngine;
 
 [System.Serializable]
 public class Octave {
-	[Range(0f, 1f)]
+	public float scale;
 	public float amplitude;
-
-	[Range(0f, 127f)]
-	public float frequency;
-	
+	public float frequency;	
+	public float xOffset;
+	public float yOffset;
 }

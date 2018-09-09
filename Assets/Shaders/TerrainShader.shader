@@ -1,9 +1,19 @@
 ﻿Shader "Custom/TerrainShader" {
-	Properties {
-		_Color ("Color", Color) = (1,1,1,1)
-		_GrassTex ("Grass Texture", 2D) = "white" {}
-		_DirtTex ("Dirt Texture", 2D) = "white" {}
-		_NoiseTex ("Noise Texture", 2D) = "white" {}
+	Properties {		
+		_Depth ("_Depth", Float) = 180
+		
+		_SnowHeight ("Snow Height", Range(0, 1)) = 0
+		_RockHeight ("Rock Height", Range(0, 1)) = 0
+		_GrassHeight ("Grass Height", Range(0, 1)) = 0
+		_BeachHeight ("Beach Height", Range(0, 1)) = 0
+		_WaterHeight ("Water Height", Range(0, 1)) = 0
+
+		_SnowColor ("Snow Texture", Color) = (0, 0, 0, 0)
+		_RockColor ("Rock Texture", Color) = (0, 0, 0, 0)
+		_GrassColor ("Grass Texture", Color) = (0, 0, 0, 0)
+		_BeachColor ("Beach Texture", Color) = (0, 0, 0, 0)
+		_WaterColor ("Water Texture", Color) = (0, 0, 0, 0)
+		
 		_Glossiness ("Smoothness", Range(0,1)) = 0.5
 		_Metallic ("Metallic", Range(0,1)) = 0.0
 	}
@@ -17,20 +27,29 @@
 
 		// Use shader model 3.0 target, to get nicer looking lighting
 		#pragma target 3.0
-
-		sampler2D _GrassTex;
-		sampler2D _DirtTex;
-		sampler2D _NoiseTex;
+		fixed4 _SnowColor;
+		fixed4 _RockColor;
+		fixed4 _GrassColor;
+		fixed4 _BeachColor;
+		fixed4 _WaterColor;
 
 		struct Input {
+			float2 uv_SnowTex;
+			float2 uv_RockTex;
 			float2 uv_GrassTex;
-			float2 uv_DirtTex;
-			float2 uv_NoiseTex;
+			float2 uv_BeachTex;
+			float2 uv_WaterTex;
+			float3 worldPos;
 		};
 
 		half _Glossiness;
 		half _Metallic;
-		fixed4 _Color;
+		float _Depth;
+		float _SnowHeight;
+		float _RockHeight;
+		float _GrassHeight;
+		float _BeachHeight;
+		float _WaterHeight;
 
 		// Add instancing support for this shader. You need to check 'Enable Instancing' on materials that use the shader.
 		// See https://docs.unity3d.com/Manual/GPUInstancing.html for more information about instancing.
@@ -39,14 +58,26 @@
 			// put more per-instance properties here
 		UNITY_INSTANCING_BUFFER_END(Props)
 
-		void surf (Input IN, inout SurfaceOutputStandard o) {
-			// Albedo comes from a texture tinted by color
-			fixed4 g = tex2D (_GrassTex, IN.uv_GrassTex * 16) * _Color;
-			fixed4 d = tex2D (_DirtTex, IN.uv_DirtTex * 16) * _Color;
-			fixed4 n = tex2D (_NoiseTex, IN.uv_NoiseTex);
+		void surf (Input IN, inout SurfaceOutputStandard o) {			
 
-			fixed4 col = lerp(g, d, n.r);
+			fixed4 col = fixed4(0, 0, 0 ,0);
 
+			if(IN.worldPos.y < _WaterHeight * _Depth) {
+				col = _WaterColor;
+			}
+			else if(IN.worldPos.y < _BeachHeight * _Depth) {
+				col = _BeachColor;
+			}
+			else if(IN.worldPos.y < _GrassHeight * _Depth) {
+				col = _GrassColor;
+			}
+			else if(IN.worldPos.y < _RockHeight * _Depth) {
+				col = _RockHeight;
+			}	
+			else if(IN.worldPos.y < _SnowHeight * _Depth) {
+				col = _SnowHeight;
+			}		
+					
 			o.Albedo = col.rgb;
 			// Metallic and smoothness come from slider variables
 			o.Metallic = _Metallic;
