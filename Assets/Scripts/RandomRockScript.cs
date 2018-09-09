@@ -10,7 +10,7 @@ public class RandomRockScript : MonoBehaviour {
     {
         float rand = Random.Range(randomSizeRange.x , randomSizeRange.y);
         transform.localScale = new Vector3(rand, rand, rand);
-        //transform.eulerAngles = new Vector3(rand * transform.position.x, rand * transform.position.y, rand * transform.position.z);
+        transform.eulerAngles = new Vector3(rand * transform.position.x, rand * transform.position.y, rand * transform.position.z);
     }
 	
 }
