@@ -226,8 +226,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   seed: 12399
-  width: 1024
-  height: 1024
+  width: 256
+  height: 256
   depth: 180
   exp: 1.62
   terrainMaterial: {fileID: 2100000, guid: 71bc99396fbcff34cb76c5ff744fcbbe, type: 2}
@@ -255,12 +255,12 @@ MonoBehaviour:
   objPlacementData:
   - name: Tree
     obj: {fileID: 1049618472650704, guid: d25488dd9f8eed44b95ea7a3fb3c5d53, type: 2}
-    width: 1024
-    height: 1024
+    width: 256
+    height: 256
     scale: 2
-    peakScanArea: 2
+    peakScanArea: 6
     placementLocations:
-    - {x: 0.22, y: 0.3}
+    - {x: 0.265, y: 0.3}
     xOffset: 0
     yOffset: 0
     gameObjectsInstantiationParent: {fileID: 0}

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.IO;
 
 public class Noise {
 
@@ -26,6 +27,7 @@ public class Noise {
 				texture.SetPixel(x, y, new Color(result, result, result));
 			}
 		}
+		texture.Apply();
 		return texture;
 	}
 
@@ -65,7 +67,21 @@ public class Noise {
 				texture.SetPixel(x, y, col); 
 			}
 		}
+		texture.Apply();
 		return texture;
+	}
+
+	private void SaveTexture(float[,] data, int width, int height) {
+		Texture2D texture = new Texture2D(width, height);
+		for(int j = 0; j < height; j++) {
+			for(int i = 0; i < width; i++) {
+				float sample = data[i, j];
+				texture.SetPixel(i, j, new Color(sample, sample, sample));
+			}
+		}
+		byte[] bytes = texture.EncodeToJPG();
+		File.WriteAllBytes(Application.dataPath + "/../Assets/Textures/tree.png", bytes);
+		texture.Apply();
 	}
 
 }

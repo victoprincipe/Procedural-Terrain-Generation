@@ -26,8 +26,8 @@ public class ProceduralGameObjectPlacement {
 		noise = new Noise();
 		objNoise = new float[data.width, data.height];
 		objNoise = noise.GenerateNoise(data.width, data.height, data.scale, data.xOffset, data.yOffset, 1, seed);
-		for(int i = 0; i < data.width; i++) {
-			for(int j = 0; j < data.height; j++) {
+		for(int j = 0; j < data.height; j++) {
+			for(int i = 0; i < data.width; i++) {
 				bool canPlace = false;
 				foreach(Vector2 v in data.placementLocations) {
 					if(terrainData[i, j] > v.x && terrainData[i, j] < v.y) {
@@ -36,9 +36,9 @@ public class ProceduralGameObjectPlacement {
 				}
 				if(canPlace) {
 					float max = 0;
-					for(int k = Mathf.Clamp(i - data.peakScanArea, 0, data.width - 1); k < Mathf.Clamp(i + data.peakScanArea, 0, data.width - 1); k++) {
-						for(int l = Mathf.Clamp(j - data.peakScanArea, 0, data.height - 1); l < Mathf.Clamp(j + data.peakScanArea - 1, 0, data.width); l++) {
-							float value = objNoise[k, l];
+					for(int k = Mathf.Clamp(j - data.peakScanArea, 0, data.height - 1); k < Mathf.Clamp(j + data.peakScanArea, 0, data.height - 1); k++) {
+						for(int l = Mathf.Clamp(i - data.peakScanArea, 0, data.width - 1); l < Mathf.Clamp(i + data.peakScanArea - 1, 0, data.width); l++) {
+							float value = objNoise[l, k];
 							if(value > max) {
 								max = value;
 							}
