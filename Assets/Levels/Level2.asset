@@ -1,0 +1,86 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2d093b925f94474eb740a8680cfd496, type: 3}
+  m_Name: Level2
+  m_EditorClassIdentifier: 
+  seed: 322
+  width: 512
+  height: 512
+  depth: 220
+  exp: 1.6
+  octaves:
+  - scale: 15.6
+    amplitude: 30
+    frequency: 51.35
+    xOffset: 0
+    yOffset: 0
+  - scale: 2
+    amplitude: 2.88
+    frequency: 20
+    xOffset: 0
+    yOffset: 0
+  - scale: 2
+    amplitude: 0.5
+    frequency: 80
+    xOffset: 0
+    yOffset: 0
+  - scale: 2
+    amplitude: 0.5
+    frequency: 120
+    xOffset: 0
+    yOffset: 0
+  objPlacementData:
+  - name: Tree
+    obj: {fileID: 1049618472650704, guid: d25488dd9f8eed44b95ea7a3fb3c5d53, type: 2}
+    seed: 322
+    width: 512
+    height: 512
+    scale: 2
+    peakScanArea: 8
+    placementLocations:
+    - {x: 0.1, y: 0.27}
+    xOffset: 0
+    yOffset: 0
+  - name: Grass
+    obj: {fileID: 1393978557920002, guid: ff7e8725d3309a94188de92fc5a90013, type: 2}
+    seed: 322
+    width: 512
+    height: 512
+    scale: 2
+    peakScanArea: 3
+    placementLocations:
+    - {x: 0.1, y: 0.25}
+    xOffset: 1.19
+    yOffset: 5.84
+  - name: Rock
+    obj: {fileID: 1827641601473414, guid: 44911c92e6d9736498ec1184459747f4, type: 2}
+    seed: 322
+    width: 512
+    height: 512
+    scale: 2
+    peakScanArea: 15
+    placementLocations:
+    - {x: 0.1, y: 0.35}
+    xOffset: 1.33
+    yOffset: 2.85
+  - name: Mushroom
+    obj: {fileID: 1372852239657830, guid: 4dd08f970befd5a499e423b9a2be6b08, type: 2}
+    seed: 322
+    width: 512
+    height: 512
+    scale: 2
+    peakScanArea: 12
+    placementLocations:
+    - {x: 0.1, y: 0.25}
+    xOffset: 7.96
+    yOffset: 2.85
+  collectables: []
+  playerStartPosition: {x: 56.7158, y: 23.22369, z: 110.9995}

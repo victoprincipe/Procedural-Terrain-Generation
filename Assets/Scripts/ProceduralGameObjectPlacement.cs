@@ -7,6 +7,7 @@ using UnityEngine;
 public class ProceduralPlacementData {
 	public string name;
 	public GameObject obj;
+	public float seed;
 	public int width;
 	public int height;
 	public float scale;
@@ -14,7 +15,6 @@ public class ProceduralPlacementData {
 	public List<Vector2> placementLocations; 
 	public float xOffset = 0;
 	public float yOffset = 0;
-	public Transform gameObjectsInstantiationParent;
 }
 
 public class ProceduralGameObjectPlacement {
@@ -22,7 +22,7 @@ public class ProceduralGameObjectPlacement {
 	private Noise noise;
 	private float[,] objNoise;
 
-	public void SpawnObjects(ProceduralPlacementData data, float[,] terrainData, float seed = 1) {
+	public void SpawnObjects(ProceduralPlacementData data, float[,] terrainData, Transform parent,float seed = 1) {
 		noise = new Noise();
 		objNoise = new float[data.width, data.height];
 		objNoise = noise.GenerateNoise(data.width, data.height, data.scale, data.xOffset, data.yOffset, 1, seed);
@@ -46,8 +46,8 @@ public class ProceduralGameObjectPlacement {
 					}
 					if(objNoise[i, j] == max) {
 						objNoise[i, j] = 1;
-						GameObject go = (GameObject)GameObject.Instantiate(data.obj, new Vector3(j, 0, i), Quaternion.identity);
-						go.transform.parent = data.gameObjectsInstantiationParent;
+						GameObject go = (GameObject)GameObject.Instantiate(data.obj, new Vector3(j, 0, i), Quaternion.identity);	
+						go.transform.parent = parent;
 					}
 
 				}						
