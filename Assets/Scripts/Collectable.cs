@@ -4,13 +4,24 @@ using UnityEngine;
 
 public class Collectable : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    private List<CollectableData> listCollectables;
+    private CollectableData collectableData;
+
+	private void OnTriggerEnter(Collider other) {
+        if(other.tag == "Player") {
+            other.GetComponent<PlayerGUI>().AddCrystal();
+            Collect();
+        }
+    }
+
+    public void SetData(List<CollectableData> list, CollectableData cData) {
+        listCollectables = list;
+        collectableData = cData;
+    }
+
+    private void Collect() {
+        listCollectables.Remove(collectableData);
+        Destroy(gameObject);
+    }
+
 }

@@ -36,8 +36,10 @@ public class ProceduralTerrainController : MonoBehaviour {
 
 	public void LoadLevel(LevelData lvlData) {
 		levelData = lvlData;
+		DestroyPreviousObjects();
 		GenerateTerrain();
-		PlaceObjects();
+		InitGeneralObjects();
+		PlaceCollectables();
 		SpawnPlayer();
 		SpawnPortals();
 	}
@@ -49,12 +51,31 @@ public class ProceduralTerrainController : MonoBehaviour {
 		terrain.terrainData.SetHeights(0, 0, terrainData);
 	}
 
-	private void PlaceObjects() {
+	private void PlaceCollectables() {
+		pgp.PlaceCollectablesObjects(levelData, terrainObjects);
+	}
+
+	private void ClearLevelCollectables() {
+		foreach(ProceduralCollectablesPlacementData ppd in levelData.collectableObjPlacementData) {
+			ppd.collectables.Clear();
+		}
+	}
+
+	private void DestroyPreviousObjects() {
 		for(int i = 0; i < terrainObjects.GetChildCount(); i++) {
 			Destroy(terrainObjects.GetChild(i).gameObject);
 		}
-		foreach(ProceduralPlacementData ppd in levelData.objPlacementData) {
-			pgp.SpawnObjects(ppd, terrainData, terrainObjects, levelData.seed);
+	}
+
+	private void InitGeneralObjects() {		
+		foreach(ProceduralPlacementData ppd in levelData.generalObjPlacementData) {			
+			pgp.SpawnGeneralObjects(ppd, terrainData, terrainObjects, levelData);
+		}		
+	}
+
+	private void InitCollectableObjects() {
+		foreach(ProceduralCollectablesPlacementData ppd in levelData.collectableObjPlacementData) {			
+			pgp.SpawnCollectableObjects(ppd, terrainData, terrainObjects, levelData);
 		}
 	}
 
@@ -83,9 +104,11 @@ public class ProceduralTerrainController : MonoBehaviour {
 		noise = new Noise();
 		pgp = new ProceduralGameObjectPlacement();
 		terrain = GetComponent<Terrain>();
+		ClearLevelCollectables();
 		GenerateTerrain();
 		if(placeObjects) {
-			PlaceObjects();
+			InitGeneralObjects();
+			InitCollectableObjects();
 		}	
 		SpawnPlayer();
 		SpawnPortals();

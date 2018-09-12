@@ -49,6 +49,7 @@ MonoBehaviour:
     - {x: 0.1, y: 0.27}
     xOffset: 0
     yOffset: 0
+    isCollectable: 0
   - name: Grass
     obj: {fileID: 1393978557920002, guid: ff7e8725d3309a94188de92fc5a90013, type: 2}
     seed: 322
@@ -60,6 +61,7 @@ MonoBehaviour:
     - {x: 0.1, y: 0.25}
     xOffset: 1.19
     yOffset: 5.84
+    isCollectable: 0
   - name: Rock
     obj: {fileID: 1827641601473414, guid: 44911c92e6d9736498ec1184459747f4, type: 2}
     seed: 322
@@ -71,6 +73,7 @@ MonoBehaviour:
     - {x: 0.1, y: 0.35}
     xOffset: 1.33
     yOffset: 2.85
+    isCollectable: 0
   - name: Mushroom
     obj: {fileID: 1372852239657830, guid: 4dd08f970befd5a499e423b9a2be6b08, type: 2}
     seed: 322
@@ -82,5 +85,21 @@ MonoBehaviour:
     - {x: 0.1, y: 0.25}
     xOffset: 7.96
     yOffset: 2.85
+    isCollectable: 0
+  - name: Crystals
+    obj: {fileID: 1732471415899674, guid: ee9029c071cdf3146a1e2f3520febb01, type: 2}
+    seed: 332.88
+    width: 512
+    height: 512
+    scale: 2
+    peakScanArea: 25
+    placementLocations:
+    - {x: 0.1, y: 0.25}
+    xOffset: 7.96
+    yOffset: 2.85
+    isCollectable: 1
   collectables: []
+  portals:
+  - position: {x: 33.95, y: 15.87, z: 69.19}
+    level: {fileID: 11400000, guid: a4d7a2009cf9bcb4a87b531f9a4b72fe, type: 2}
   playerStartPosition: {x: 56.7158, y: 23.22369, z: 110.9995}

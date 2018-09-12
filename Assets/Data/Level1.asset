@@ -32,29 +32,29 @@ MonoBehaviour:
     frequency: 80
     xOffset: 0
     yOffset: 0
-  objPlacementData:
-  - name: Tree
+  generalObjPlacementData:
+  - name: Trees
     obj: {fileID: 1049618472650704, guid: d25488dd9f8eed44b95ea7a3fb3c5d53, type: 2}
-    seed: 0
+    seed: 123
     width: 512
     height: 512
     scale: 2
     peakScanArea: 8
     placementLocations:
-    - {x: 0.1, y: 0.27}
-    xOffset: 0
-    yOffset: 0
+    - {x: 0.1, y: 0.3}
+    xOffset: 1.68
+    yOffset: 2.16
   - name: Grass
     obj: {fileID: 1393978557920002, guid: ff7e8725d3309a94188de92fc5a90013, type: 2}
-    seed: 0
+    seed: 123
     width: 512
     height: 512
     scale: 2
-    peakScanArea: 3
+    peakScanArea: 4
     placementLocations:
-    - {x: 0.1, y: 0.25}
-    xOffset: 1.19
-    yOffset: 5.84
+    - {x: 0.1, y: 0.3}
+    xOffset: 4.69
+    yOffset: 1.74
   - name: Rock
     obj: {fileID: 1827641601473414, guid: 44911c92e6d9736498ec1184459747f4, type: 2}
     seed: 123
@@ -63,21 +63,33 @@ MonoBehaviour:
     scale: 2
     peakScanArea: 15
     placementLocations:
-    - {x: 0.1, y: 0.35}
-    xOffset: 1.33
-    yOffset: 2.85
+    - {x: 0.1, y: 0.4}
+    xOffset: 2.91
+    yOffset: 3.01
   - name: Mushroom
     obj: {fileID: 1372852239657830, guid: 4dd08f970befd5a499e423b9a2be6b08, type: 2}
     seed: 123
     width: 512
     height: 512
     scale: 2
-    peakScanArea: 12
+    peakScanArea: 15
     placementLocations:
     - {x: 0.1, y: 0.25}
-    xOffset: 7.96
-    yOffset: 2.85
-  collectables: []
+    xOffset: 15.28
+    yOffset: 4.04
+  collectableObjPlacementData:
+  - name: Crystals
+    obj: {fileID: 1732471415899674, guid: ee9029c071cdf3146a1e2f3520febb01, type: 2}
+    seed: 123
+    width: 512
+    height: 512
+    scale: 2
+    peakScanArea: 12
+    placementLocations:
+    - {x: 0.1, y: 0.3}
+    xOffset: 1.62
+    yOffset: 1.92
+    collectables: []
   portals:
   - position: {x: 229.2694, y: 17.12, z: 258.11}
     level: {fileID: 11400000, guid: 6717e50dbe84c4f499e692aa09b4712a, type: 2}
