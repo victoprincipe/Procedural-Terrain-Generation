@@ -23,12 +23,64 @@ public class ProceduralCollectablesPlacementData : ProceduralPlacementData {
 	public List<CollectableData> collectables = new List<CollectableData>();
 }
 
+[System.Serializable]
+public class ProceduralTerrainModifierObjects : ProceduralPlacementData {
+	public int area;
+	[Range(0f, 1f)]
+	public float areaheight;
+}
+
 
 
 public class ProceduralGameObjectPlacement {
 
 	private Noise noise;
 	private float[,] objNoise;
+
+	public void SpawnTerrainModifierObjects(ProceduralTerrainModifierObjects data, ref float[,] terrainData, Transform parent, LevelData level) {
+		noise = new Noise();
+		objNoise = new float[data.width, data.height];
+		objNoise = noise.GenerateNoise(data.width, data.height, data.scale, data.xOffset, data.yOffset, 1, level.seed);
+		for(int j = 0; j < data.height; j++) {
+			for(int i = 0; i < data.width; i++) {
+				bool canPlace = false;
+				foreach(Vector2 v in data.placementLocations) {
+					if(terrainData[i, j] > v.x && terrainData[i, j] < v.y) {
+						canPlace = true;
+					}
+				}
+				if(canPlace) {
+					float max = 0;
+					for(int k = Mathf.Clamp(j - data.peakScanArea, 0, data.height - 1); k < Mathf.Clamp(j + data.peakScanArea, 0, data.height - 1); k++) {
+						for(int l = Mathf.Clamp(i - data.peakScanArea, 0, data.width - 1); l < Mathf.Clamp(i + data.peakScanArea - 1, 0, data.width); l++) {
+							float value = objNoise[l, k];
+							if(value > max) {
+								max = value;
+							}
+						}
+					}
+					if(objNoise[i, j] == max) {
+						objNoise[i, j] = 1;
+						GameObject go = (GameObject)GameObject.Instantiate(data.obj);
+						go.transform.position = new Vector3(j, 0, i);	
+												
+						CollectableData cData = new CollectableData();
+						cData.position = go.transform.position;
+						go.transform.parent = parent;
+
+						float heightArea = terrainData[i, j];
+
+						for(int y = Mathf.Clamp(i - data.area, 0, data.height - 1); y < Mathf.Clamp(i + data.area, 0, data.height -1); y++) {
+							for(int x = Mathf.Clamp(j - data.area, 0, data.width - 1); x < Mathf.Clamp(j + data.area, 0, data.width -1); x++) {
+								terrainData[y, x] = Mathf.SmoothStep(terrainData[y, x], data.areaheight, 0.5f);							
+							}
+						}
+					}
+
+				}						
+			}
+		}
+	}
 
 	public void PlaceCollectablesObjects(LevelData level, Transform parent) {
 		foreach(ProceduralCollectablesPlacementData ppd in level.collectableObjPlacementData) {

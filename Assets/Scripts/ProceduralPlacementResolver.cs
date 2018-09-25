@@ -16,19 +16,24 @@ public class ProceduralPlacementResolver : MonoBehaviour {
 	[SerializeField]
 	private float distanceFromCollisionPosition = 0f;
 
+	[SerializeField]
+	private bool setAngle = true;
+
 	private void Start() {
 		RaycastHit hit;
 		if(Physics.Raycast(transform.position + Vector3.up * 200f, -Vector3.up, 
 		out hit, maxDistanceRay, layer))
 		{
-			transform.position = hit.point + Vector3.up * distanceFromCollisionPosition;	
-			float angle = Vector3.AngleBetween(Vector3.up, hit.normal) * Mathf.Rad2Deg;			
-			if(angle > maxAngle) {
-				transform.rotation = Quaternion.AngleAxis(maxAngle, Vector3.up);	
-			}
-			else {					
-				transform.rotation = Quaternion.FromToRotation(Vector3.up, hit.normal);		
-			}				
+			transform.position = hit.point + Vector3.up * distanceFromCollisionPosition;
+			if(setAngle) {
+				float angle = Vector3.AngleBetween(Vector3.up, hit.normal) * Mathf.Rad2Deg;			
+				if(angle > maxAngle) {
+					transform.rotation = Quaternion.AngleAxis(maxAngle, Vector3.up);	
+				}
+				else {					
+					transform.rotation = Quaternion.FromToRotation(Vector3.up, hit.normal);		
+				}
+			}								
 		}
 		Destroy(this);
 	}

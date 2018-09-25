@@ -32,6 +32,20 @@ MonoBehaviour:
     frequency: 80
     xOffset: 0
     yOffset: 0
+  ObjectsTerrainModifier:
+  - name: House
+    obj: {fileID: 1497422584439846, guid: 366d24e7b489a4740868ddb95d289b37, type: 2}
+    seed: 123
+    width: 512
+    height: 512
+    scale: 1
+    peakScanArea: 30
+    placementLocations:
+    - {x: 0.1, y: 0.3}
+    xOffset: 1
+    yOffset: 1
+    area: 10
+    areaheight: 0.199
   generalObjPlacementData:
   - name: Trees
     obj: {fileID: 1049618472650704, guid: d25488dd9f8eed44b95ea7a3fb3c5d53, type: 2}
@@ -89,7 +103,81 @@ MonoBehaviour:
     - {x: 0.1, y: 0.3}
     xOffset: 1.62
     yOffset: 1.92
-    collectables: []
+    collectables:
+    - position: {x: 0, y: 0, z: 53}
+    - position: {x: 0, y: 0, z: 509}
+    - position: {x: 10, y: 0, z: 495}
+    - position: {x: 22, y: 0, z: 469}
+    - position: {x: 25, y: 0, z: 507}
+    - position: {x: 42, y: 0, z: 499}
+    - position: {x: 43, y: 0, z: 463}
+    - position: {x: 62, y: 0, z: 507}
+    - position: {x: 63, y: 0, z: 461}
+    - position: {x: 70, y: 0, z: 487}
+    - position: {x: 71, y: 0, z: 443}
+    - position: {x: 86, y: 0, z: 495}
+    - position: {x: 139, y: 0, z: 169}
+    - position: {x: 142, y: 0, z: 193}
+    - position: {x: 146, y: 0, z: 209}
+    - position: {x: 152, y: 0, z: 227}
+    - position: {x: 164, y: 0, z: 247}
+    - position: {x: 164, y: 0, z: 267}
+    - position: {x: 167, y: 0, z: 161}
+    - position: {x: 171, y: 0, z: 207}
+    - position: {x: 176, y: 0, z: 183}
+    - position: {x: 177, y: 0, z: 285}
+    - position: {x: 179, y: 0, z: 233}
+    - position: {x: 183, y: 0, z: 155}
+    - position: {x: 183, y: 0, z: 257}
+    - position: {x: 185, y: 0, z: 303}
+    - position: {x: 186, y: 0, z: 319}
+    - position: {x: 188, y: 0, z: 345}
+    - position: {x: 192, y: 0, z: 205}
+    - position: {x: 196, y: 0, z: 369}
+    - position: {x: 201, y: 0, z: 285}
+    - position: {x: 202, y: 0, z: 397}
+    - position: {x: 203, y: 0, z: 311}
+    - position: {x: 207, y: 0, z: 217}
+    - position: {x: 211, y: 0, z: 257}
+    - position: {x: 216, y: 0, z: 289}
+    - position: {x: 218, y: 0, z: 383}
+    - position: {x: 220, y: 0, z: 235}
+    - position: {x: 231, y: 0, z: 195}
+    - position: {x: 232, y: 0, z: 379}
+    - position: {x: 234, y: 0, z: 333}
+    - position: {x: 234, y: 0, z: 365}
+    - position: {x: 244, y: 0, z: 229}
+    - position: {x: 245, y: 0, z: 319}
+    - position: {x: 246, y: 0, z: 347}
+    - position: {x: 254, y: 0, z: 273}
+    - position: {x: 264, y: 0, z: 363}
+    - position: {x: 269, y: 0, z: 337}
+    - position: {x: 270, y: 0, z: 249}
+    - position: {x: 270, y: 0, z: 297}
+    - position: {x: 272, y: 0, z: 323}
+    - position: {x: 285, y: 0, z: 237}
+    - position: {x: 294, y: 0, z: 309}
+    - position: {x: 296, y: 0, z: 255}
+    - position: {x: 296, y: 0, z: 291}
+    - position: {x: 314, y: 0, z: 253}
+    - position: {x: 319, y: 0, z: 277}
+    - position: {x: 322, y: 0, z: 225}
+    - position: {x: 330, y: 0, z: 261}
+    - position: {x: 335, y: 0, z: 247}
+    - position: {x: 337, y: 0, z: 231}
+    - position: {x: 341, y: 0, z: 213}
+    - position: {x: 354, y: 0, z: 223}
+    - position: {x: 370, y: 0, z: 185}
+    - position: {x: 370, y: 0, z: 219}
+    - position: {x: 381, y: 0, z: 201}
+    - position: {x: 400, y: 0, z: 183}
+    - position: {x: 449, y: 0, z: 225}
+    - position: {x: 483, y: 0, z: 233}
+    - position: {x: 485, y: 0, z: 211}
+    - position: {x: 494, y: 0, z: 247}
+    - position: {x: 498, y: 0, z: 209}
+    - position: {x: 508, y: 0, z: 283}
+    - position: {x: 509, y: 0, z: 241}
   portals:
   - position: {x: 229.2694, y: 17.12, z: 258.11}
     level: {fileID: 11400000, guid: 6717e50dbe84c4f499e692aa09b4712a, type: 2}
